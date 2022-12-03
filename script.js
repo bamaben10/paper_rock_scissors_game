@@ -11,9 +11,6 @@ const getPlayerSelection = (playerInput) => {
   }
 };
 
-// console.log(getPlayerSelection("rock"));
-// console.log(getPlayerSelection("apple"));
-
 const getComputerSelection = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
@@ -25,10 +22,6 @@ const getComputerSelection = () => {
       return "scissors";
   }
 };
-
-// console.log(getComputerSelection());
-// console.log(getComputerSelection());
-// console.log(getComputerSelection());
 
 const playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
@@ -57,12 +50,8 @@ const playRound = (playerSelection, computerSelection) => {
   }
 };
 
-// console.log(playRound("rock", "scissors"));
-// console.log(playRound("paper", "scissors"));
-// console.log(playRound("paper", "paper"));
-
 const game = () => {
-  const playerSelection = getPlayerSelection("Paper");
+  const playerSelection = getPlayerSelection("rock");
   const computerSelection = getComputerSelection();
   console.log(`You choose ${playerSelection}`);
   console.log(`The computer chose ${computerSelection}`);
@@ -71,8 +60,3 @@ const game = () => {
 };
 
 game();
-
-// const game = (playRound) => {
-//   for (let i = 0; i < 5; i++) {}
-//   playRound();
-// };
