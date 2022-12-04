@@ -26,27 +26,14 @@ const getComputerSelection = () => {
 const playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
     return "This game is a tie!";
-  }
-  if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      return "You lose, computer won!";
-    } else {
-      return "Congratulations, you won!";
-    }
-  }
-  if (playerSelection === "paper") {
-    if (computerSelection === "scissors") {
-      return "You lose, computer won!";
-    } else {
-      return "Congratulations, you won!";
-    }
-  }
-  if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
-      return "You lose, computer won!";
-    } else {
-      return "Congratulations, you won!";
-    }
+  } else if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "scissors" && computerSelection === "rock") ||
+    (playerSelection === "paper" && computerSelection === "scissors")
+  ) {
+    return "You lose, computer won!";
+  } else {
+    return "Congratulations, you won!";
   }
 };
 
@@ -54,7 +41,7 @@ const game = () => {
   const playerSelection = getPlayerSelection("rock");
   const computerSelection = getComputerSelection();
   console.log(`You choose ${playerSelection}`);
-  console.log(`The computer chose ${computerSelection}`);
+  console.log(`The computer choose ${computerSelection}`);
 
   console.log(playRound(playerSelection, computerSelection));
 };
